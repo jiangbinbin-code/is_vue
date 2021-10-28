@@ -1,0 +1,19 @@
+配置重定向:
+修改路由配置:
+{
+  path: 'main',
+  name: 'Main',
+  componet: Main
+},
+{
+  path: '/goMain',
+  redirect: '/main'
+}
+说明:这里定义了两个路径,一个是/main 一个是/goMain,其中 /goMain
+重定向到了/main路径,由此可以看出重定向不需要定义组件、
+
+重定向到组件:
+ 设置对应路径即可
+  <route-link to="/goMain">回到首页</router-link>
+
+

@@ -9,7 +9,30 @@
 <script>
 export default {
   props: ['id'],
-  name: 'MemberList'
+  name: 'MemberList',
+  beforeRouteEnter: (to, from, next) => {
+    console.log('进入会员等级页面')
+    next(vm => {
+      vm.getData()
+    })
+  },
+  beforeRouteLeave: (to, form, next) => {
+    console.log('离开会员等级页面')
+    next()
+  },
+  methods: {
+    getData: function () {
+      this.axios({
+        method: 'get',
+        url: 'http://localhost:8080/data.json'})
+        .then(function (repos) {
+          console.log(repos)
+        }).catch(function (error) {
+          console.log(error)
+        })
+    }
+  }
+
 }
 </script>
 

@@ -1,0 +1,19 @@
+路由中的钩子函数
+beforRouteEnter: 在进入路由前执行
+beforeRouterLeave: 在离开路有前执行
+
+案列代码如下
+<script>
+ export default{
+    props:['id'],
+    name:'MemberLevel',
+    beforRouteEnter:(to,from,next)=>{
+       console.log('进入会员等级页面');
+       next();
+    },
+    beforRouteLeave:(to,from,next)=>{
+       console.log('离开会员等级页面');
+       next();
+    }
+ }
+</script>

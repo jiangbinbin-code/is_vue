@@ -4,6 +4,7 @@ import Login from '../views/Login'
 import Main from '../views/Main'
 import MemberList from '../views/Member/MemberList'
 import MemberLevel from '../views/Member/MemberLevel'
+import NotFound from '../views/NotFound'
 
 // import HelloWorld from '@/components/HelloWorld'
 /*
@@ -12,6 +13,7 @@ import MemberLevel from '../views/Member/MemberLevel'
 Vue.use(Router)
 
 export default new Router({
+  mode: 'history', /* 历史模式 不显示# */
   routes: [
     {
       // 路由跳转路径
@@ -44,6 +46,14 @@ export default new Router({
           props: true
         }
       ]
+    },
+    {
+      path: '/goMain/:name',
+      redirect: '/main:name'
+    },
+    {
+      path: '*',
+      component: NotFound
     }
   ]
 })

@@ -10,8 +10,12 @@
             </el-menu-item>
             <el-menu-item index="1-2">
               <router-link to="{name:'MemberList',params:{id：2}}">会员列表</router-link>
-
             </el-menu-item>
+            <el-menu-item index="1-2">
+              <!--带参重定向-->
+              <router-link to="/goMain/admin123">回到首页</router-link>
+            </el-menu-item>
+
           </el-menu-item-group>
         </el-submenu>
         <el-submenu index="2">
